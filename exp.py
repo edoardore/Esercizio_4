@@ -6,19 +6,20 @@ t_indirizzamento_aperto = HashOpen(1000)
 
 
 def TestA(HashChained):
-    A = random_list(1000,1000)
-    size=len(A)
+    A = random_list(1000, 1000)
+    size = len(A)
     for i in range(0, size):
-        t_concatenamento.insert(A[i],i)
+        t_concatenamento.insert(A[i], i)
 
 
 def TestB(HashOpen):
-    A=random_list(1000,1000)
-    size=len(A)
+    A = random_list(1000, 1000)
+    size = len(A)
+    collisioni = 0
     for i in range(0, size):
-        t_indirizzamento_aperto.insert(A[i])
+        collisioni += t_indirizzamento_aperto.insert(A[i])
     t_indirizzamento_aperto.print_hash()
-
+    print collisioni
 
 
 def random_list(max, size):

@@ -145,7 +145,7 @@ class HashOpen:
                 a = False
             else:
                 i += 1
-
+        return i
     def print_hash(self):
         print self.list
 
