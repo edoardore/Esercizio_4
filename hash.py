@@ -19,6 +19,7 @@ class Nodo:
 class LinkedList:
     def __init__(self):
         self.head = None
+        self.collision = None
 
     def is_empty(self):
         return self.head is None
