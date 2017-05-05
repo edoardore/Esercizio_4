@@ -117,6 +117,7 @@ class HashChained:
 
 class HashOpen:
     def __init__(self, m):
+        self.collisions = 0
         boolean = True
         while boolean:
             a = True
@@ -145,7 +146,8 @@ class HashOpen:
                 a = False
             else:
                 i += 1
-        return i
+                self.collisions += 1
+
     def print_hash(self):
         print self.list
 
