@@ -117,7 +117,6 @@ class HashChained:
 
 class HashOpen:
     def __init__(self, m):
-        self.collisions = 0
         boolean = True
         while boolean:
             a = True
@@ -130,6 +129,7 @@ class HashOpen:
                 m += 1
             else:
                 boolean = False
+        self.collisions = 0
         self.size = m
         print "HashOpen m is:", self.size
         self.list = range(0, self.size)
@@ -152,8 +152,15 @@ class HashOpen:
         print self.list
 
     def delete(self, value):
-        h = value % self.size
-        self.list[h] = None
+        delete = False
+        i = 0
+        while not delete and i < self.size:
+            h = (value + i) % self.size
+            if self.list[h] == value:
+                self.list[h] = None
+                delete = True
+            else:
+                i += 1
 
     def search(self, value):
         found = False
@@ -166,4 +173,4 @@ class HashOpen:
         if found:
             print "Elemento presente in posizione:", i, "di:", self.size
         else:
-            print "Elemento non presente"
+            print "Elemento non presente."
