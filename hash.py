@@ -19,12 +19,15 @@ class Nodo:
 class LinkedList:
     def __init__(self):
         self.head = None
-        self.collision = None
+        self.collision = 0
 
     def is_empty(self):
         return self.head is None
 
     def __add__(self, other):
+        if self.head is not None:
+            self.collision = 1
+        return self.collision
         t = Nodo(other)
         t.set_next(self.head)
         self.head = t
@@ -90,14 +93,14 @@ class HashChained:
                 boolean = False
         self.size = m
         print "HashChained m is:", self.size
-
+        self.collision = 0
         self.slot = range(self.size)
         for j in range(0, self.size):
             self.slot[j] = LinkedList()
 
     def insert(self, value, key):
         h = key % self.size
-        self.slot[h].__add__(value)
+        self.collision += self.slot[h].__add__(value)
 
     def print_hash(self):
         for i in range(0, self.size):
@@ -174,3 +177,4 @@ class HashOpen:
             print "Elemento presente in posizione:", i, "di:", self.size
         else:
             print "Elemento non presente."
+
