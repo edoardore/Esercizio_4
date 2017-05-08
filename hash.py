@@ -134,7 +134,7 @@ class HashOpen:
                 boolean = False
         self.collisions = 0
         self.size = m
-        print "HashOpen m is:", self.size
+        #print "HashOpen m is:", self.size
         self.list = range(0, self.size)
         for j in range(0, self.size):
             self.list[j] = None
