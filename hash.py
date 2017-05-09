@@ -19,18 +19,18 @@ class Nodo:
 class LinkedList:
     def __init__(self):
         self.head = None
-        self.collision = 0
+        self.collisions = 0
 
     def is_empty(self):
         return self.head is None
 
     def __add__(self, other):
         if self.head is not None:
-            self.collision = 1
-        return self.collision
+            self.collisions = 1
         t = Nodo(other)
         t.set_next(self.head)
         self.head = t
+        return self.collisions
 
     def size(self):
         value = self.head
@@ -134,7 +134,7 @@ class HashOpen:
                 boolean = False
         self.collisions = 0
         self.size = m
-        #print "HashOpen m is:", self.size
+        # print "HashOpen m is:", self.size
         self.list = range(0, self.size)
         for j in range(0, self.size):
             self.list[j] = None
@@ -177,3 +177,5 @@ class HashOpen:
             print "Elemento presente in posizione:", i, "di:", self.size
         else:
             print "Elemento non presente."
+
+
