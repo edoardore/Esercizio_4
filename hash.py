@@ -92,7 +92,7 @@ class HashChained:
             else:
                 boolean = False
         self.size = m
-        print "HashChained m is:", self.size
+        #print "HashChained m is:", self.size
         self.collision = 0
         self.slot = range(self.size)
         for j in range(0, self.size):
@@ -133,6 +133,7 @@ class HashOpen:
             else:
                 boolean = False
         self.collisions = 0
+        self.sequenze = 0
         self.size = m
         # print "HashOpen m is:", self.size
         self.list = range(0, self.size)
@@ -146,6 +147,7 @@ class HashOpen:
             h = (value + i) % self.size
             if self.list[h] is None:
                 self.list[h] = value
+                self.sequenze += i + 1
                 a = False
             else:
                 i += 1
