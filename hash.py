@@ -177,4 +177,3 @@ class HashOpen:
             print "Elemento presente in posizione:", i, "di:", self.size
         else:
             print "Elemento non presente."
-
