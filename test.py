@@ -66,10 +66,6 @@ def TestOpen():
         lista_collisioni_min[j] = collisioni_min
         lista_collisiini_max[j] = collisioni_max
 
-        lista_collisioni_medie[j] = collisioni_medie
-        lista_collisioni_min[j] = collisioni_min
-        lista_collisiini_max[j] = collisioni_max
-
         j += 1
     pickle.dump(lista_collisioni_medie, open("medie.p", "wb"))
     pickle.dump(lista_collisioni_min, open("min.p", "wb"))
